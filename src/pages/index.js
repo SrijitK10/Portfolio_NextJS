@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
