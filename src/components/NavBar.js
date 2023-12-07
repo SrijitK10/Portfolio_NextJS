@@ -13,11 +13,7 @@ const CustomLink = ({ href, title, className = '' }) => {
     <Link href={href} className={`${className} relative group`}>
       {title}
 
-      <span className={`
-      h-[1px] inline-block w-0 bg-dark 
-      absolute left-0 -bottom-0.5 
-      group-hover:w-full transition-[width] 
-      ease duration-300
+      <span className={`h-[1px] inline-block w-0 bg-dark absolute left-0 -bottom-0.5  group-hover:w-full transition-[width] ease duration-300
       ${router.asPath === href ?'w-full':'w-0'}`} >
         &nbsp;
       </span>
@@ -39,11 +35,11 @@ const NavBar = () => {
         <motion.a href='https://x.com/SrijitKundu4?t=IuDVhPNge9woh9jh9Ey5nw&s=09' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mr-3'>
           <TwitterIcon/> 
         </motion.a>
-        <motion.a href='https://github.com/SrijitK10' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mr-3'>
+        <motion.a href='https://github.com/SrijitK10' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mx-3'>
           <GithubIcon/>
         </motion.a>
-        <motion.a href='www.linkedin.com/in/srijit-kundu' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mr-3'><LinkedInIcon/> </motion.a>
-        <motion.a href='https://instagram.com' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mr-3'><InstagramIcon/> </motion.a>
+        <motion.a href='www.linkedin.com/in/srijit-kundu' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mx-3'><LinkedInIcon/> </motion.a>
+        <motion.a href='https://instagram.com' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 ml-3'><InstagramIcon/> </motion.a>
         
       </nav>
       <div className='absolute left-[50%] top-2 translate-x-0-50%]'>
