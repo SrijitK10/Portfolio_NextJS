@@ -12,13 +12,13 @@ const about = () => {
                 <title>Srijit Kundu | About Page</title>
                 <meta name="description" content="" />
             </Head>
-            <main className='flex  flex-col w-full items-center justify-center'>
+            <main className='flex w-full flex-col items-center justify-center'>
                 <Layout className='pt-16'>
                     <AnimatedText text="Passion Fuels Purpose!"  className='mb-4'/>
                     <div className='grid 
 
-                    w-auto grid-cols-8 gap-16'>
-                        <div className='flex flex-col items-start justify-start col-span-3 '>
+                    w-full grid-cols-8 gap-16'>
+                        <div className='flex flex-col mx-24 items-start justify-start col-span-3 '>
                             <h2 className='text-lg  font-bold uppercase text-dark/75 mb-4'>Biogrpahy</h2>
                             <p className='font-medium '>
                                 Hello, I'm Srijit Kundu, a machine learning engineer with a knack for crafting intelligent and impactful solutions. With 4 years of hands-on experience, I thrive on turning complex challenges into innovative outcomes.
@@ -31,7 +31,7 @@ const about = () => {
                             </p>
                         </div>
 
-                        <div className='col-span-3 relative h-full rounded-2xl border-2 border-solid border-dark
+                        <div className='col-span-3 relative h-auto rounded-2xl border-2 border-solid border-dark
                         bg-light p-8 '>
                             <Image src={profilePic} alt='Srijit' className='w-full h-auto rounded-2xl'></Image>
                         </div>
