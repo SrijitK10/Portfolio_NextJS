@@ -6,6 +6,7 @@ import Layout from '@/components/Layout'
 import Image from 'next/image'
 import profilePic from '../../public/images/profile/self.png'
 import Skills from '@/components/Skills'
+import Experience from '@/components/Experience'
 
 
 const about = () => {
@@ -18,7 +19,7 @@ const about = () => {
             <main className='flex w-full flex-col items-center justify-center'>
                 <Layout className='pt-16'>
                     <AnimatedText text="Passion Fuels Purpose!" />
-                    <div className='grid grid-cols-8 gap-16 w-full'>
+                    <div className='grid grid-cols-8 mt-10 gap-16 w-full'>
                         <div className='col-span-3 flex flex-col items-start justify-start'>
                             <h2 className='mb-4 text-1g font-bold uppercase
 • text-dark/75 ' >Biography</h2>
@@ -40,6 +41,7 @@ const about = () => {
                         </div>
                     </div>
                    <Skills/>
+                   <Experience/>
                 </Layout>
 
 
