@@ -3,7 +3,7 @@ import { useScroll,motion } from "framer-motion"
 import { useRef } from 'react'
 import LiIcon from './LiIcon'
 
-const Details=({position,company, companyLink, time, address, work}) =>{
+const Details=({type,time,place,info}) =>{
     const ref=useRef(null)
     return <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
         <LiIcon reference={ref} />
@@ -11,13 +11,12 @@ const Details=({position,company, companyLink, time, address, work}) =>{
         initial={{y:50}}
         whileInView={{y:0}}
         transition={{duration:0.5, type:'spring'}} >
-            <h3 className='capitalize font-bold text-2xl '>{position}&nbsp;<a href={companyLink} target="_blank"
-            className='text-primary capitalize '>@{company} </a></h3>
+            <h3 className='capitalize font-bold text-2xl '>{type}</h3>
             <span className='capitalize font-medium text-dark/75 '>
-                {time} | {address}
+                {time} | {place}
             </span>
             <p className='font-medium w-full '>
-                {work}
+                {info}
             </p>
         </motion.div>
     </li>
@@ -27,7 +26,7 @@ const Details=({position,company, companyLink, time, address, work}) =>{
 
 
 
-const Experience = () => {
+const Education = () => {
     const ref= useRef(null);
     const { scrollYProgress } = useScroll(
         {
@@ -37,7 +36,7 @@ const Experience = () => {
     )
   return (
     <div className='my-64'>
-        <h2 className='font-bold text-8xl mb-32 w-full text-center'>Experience</h2>
+        <h2 className='font-bold text-8xl mb-32 w-full text-center'>Education</h2>
 
         <div  ref={ref} className='w-[75%] mx-auto relative'>
         <motion.div style={{scaleY: scrollYProgress}} className='absolute left-9 top-0 w-[4px] h-full bg-dark  origin-top'/>
@@ -45,13 +44,16 @@ const Experience = () => {
         
             <ul className='w-full flex flex-col items-start justify-between ml-4'>
                 <Details
-                    position='Summer Research Intern' company="IIEST, Shibpur" companyLink="https://www.iiests.ac.in/"
-                    time='June 2023- July 2023' address='Shibpur, Howrah, West Bengal, India' work="Worked as a Summer Intern in IIEST Shibpur on GAN Generated Media Compression in Online Social Media Platforms."
+                    type='Indian Certificate of Secondary Education (ICSE) Examinations' time='2020' place='Garden High School, Kolkata,West Bengal, India' info='Scored 94.6% in ICSE 2020'
                 />
+                <Details
+                    type='Indian School Certificate (ISC) Examinations' time='2022' place='Garden High School, Kolkata,West Bengal, India' info='Scored 94% in ISC 2022' />
+
+                <Details type='Bachelor of Technology (B.Tech), Computer Science and Engineering' time='2022-2026' place='SRM Institute of Science and Technology, Chennai, Tamil Nadu, India' info='2nd year student pursuing Computer Science and Technology' />
             </ul>
         </div>
     </div>
   )
 }
 
-export default Experience
+export default Education

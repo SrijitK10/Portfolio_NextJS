@@ -38,7 +38,7 @@ const NavBar = () => {
         <motion.a href='https://github.com/SrijitK10' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mx-3'>
           <GithubIcon/>
         </motion.a>
-        <motion.a href='www.linkedin.com/in/srijit-kundu' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mx-3'><LinkedInIcon/> </motion.a>
+        <motion.a href='https://www.linkedin.com/in/srijit-kundu' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mx-3'><LinkedInIcon/> </motion.a>
         <motion.a href='https://instagram.com' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 ml-3'><InstagramIcon/> </motion.a>
         
       </nav>

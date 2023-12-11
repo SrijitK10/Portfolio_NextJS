@@ -25,20 +25,13 @@ import { motion, useAnimation } from 'framer-motion';
 
 const SkillCard = ({ src, alt, title }) => {
   const controls = useAnimation();
-  const prevScrollY = useRef(0);
 
   const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > prevScrollY.current) {
-      // Scrolling down
-      controls.start({ opacity: 1, scale: 1, transition: { duration: 0.3 } });
+    if (window.scrollY > 100) {
+      controls.start({ opacity: 1, scale: 1 });
     } else {
-      // Scrolling up
-      controls.start({ opacity: 0, scale: 0.5, transition: { duration: 0.3 } });
+      controls.start({ opacity: 0, scale: 0.5 });
     }
-
-    prevScrollY.current = currentScrollY;
   };
 
   const handleHoverStart = () => {
