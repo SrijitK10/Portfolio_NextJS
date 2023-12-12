@@ -3,8 +3,9 @@ import { headers } from '../../next.config'
 import Link from 'next/link'
 import Logo from './Logo'
 import { useRouter } from 'next/router'
-import  {TwitterIcon, GithubIcon, LinkedInIcon, SvgComponent, InstagramIcon } from './Icons'
+import  {TwitterIcon, GithubIcon, LinkedInIcon, SvgComponent, InstagramIcon, SunIcon, MoonIcon } from './Icons'
 import {motion} from 'framer-motion';
+import useThemeSwitcher from './hooks/useThemeSwitcher'
 
 const CustomLink = ({ href, title, className = '' }) => {
   const router= useRouter();
@@ -22,6 +23,9 @@ const CustomLink = ({ href, title, className = '' }) => {
   )
 }
 const NavBar = () => {
+
+  const [mode, setMode] = useThemeSwitcher();
+
   return (
     <header className='flex justify-between items-center w-full px-32 py-8 font-medium'>
       <nav>
@@ -40,7 +44,15 @@ const NavBar = () => {
         </motion.a>
         <motion.a href='https://www.linkedin.com/in/srijit-kundu' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mx-3'><LinkedInIcon/> </motion.a>
         <motion.a href='https://instagram.com' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 ml-3'><InstagramIcon/> </motion.a>
-        
+        <button
+          onClick={() => setMode(mode==='light'?"dark":"light")}
+          className='ml-3 flex items-center justify-center rounded-full p-1'>
+            {
+              mode==='dark'?
+              <SunIcon className={"fill-dark}"} />
+              : <MoonIcon className={"fill-dark"} />
+            }
+        </button>
       </nav>
       <div className='absolute left-[50%] top-2 translate-x-0-50%]'>
         <Logo />
