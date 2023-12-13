@@ -17,11 +17,11 @@ const about = () => {
                 <title>Srijit Kundu | About Page</title>
                 <meta name="description" content="" />
             </Head>
-            <main className='flex w-full flex-col items-center justify-center'>
+            <main className='flex w-full flex-col items-center justify-center dark:text-light'>
                 <Layout className='pt-16'>
                     <AnimatedText text="Passion Fuels Purpose!" />
                     <div className='grid grid-cols-8 mt-10 gap-16 w-full'>
-                        <div className='col-span-3 flex flex-col items-start justify-start'>
+                        <div className='col-span-4 flex flex-col items-start justify-start'>
                             <h2 className='mb-4 text-1g font-bold uppercase
 • text-dark/75 ' >Biography</h2>
                             <p className='font-medium '>
@@ -35,7 +35,7 @@ const about = () => {
                             </p>
                         </div>
 
-                        <div className='col-span-3 relative h-auto rounded-2xl border-2 border-solid border-dark
+                        <div className='col-span-4 relative h-auto rounded-2xl border-2 border-solid border-dark
                         bg-light p-8 '>
                         <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark'/>
                             <Image src={profilePic} alt='Srijit' className='w-full h-auto rounded-2xl'></Image>
