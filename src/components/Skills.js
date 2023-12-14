@@ -28,9 +28,9 @@ const SkillCard = ({ src, alt, title }) => {
 
   const handleScroll = () => {
     if (window.scrollY > 100) {
-      controls.start({ opacity: 1, scale: 1 });
+      controls.start({ opacity: 1, scale: 1,duration:0.5});
     } else {
-      controls.start({ opacity: 0, scale: 0.5 });
+      controls.start({ opacity: 0, scale: 0.5,duration:0.5});
     }
   };
 
@@ -54,8 +54,8 @@ const SkillCard = ({ src, alt, title }) => {
       onHoverEnd={handleHoverEnd}
       animate={controls}
     >
-      <div className='mx-auto relative h-40 w-40 rounded-2xl border-2 border-solid border-dark bg-light p-8'>
-        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark' />
+      <div className='mx-auto relative h-40 w-40 rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light'>
+        <div className='absolute top-0 -right-3 -z-10 w-[109%] h-[104%] rounded-[1.5rem] bg-dark dark:bg-light' />
         <Image src={src} alt={alt} className='w-full h-full rounded-2xl object-cover' />
         <div className='mt-2 text-sm font-semibold'>{title}</div>
       </div>

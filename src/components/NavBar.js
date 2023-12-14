@@ -3,19 +3,20 @@ import { headers } from '../../next.config'
 import Link from 'next/link'
 import Logo from './Logo'
 import { useRouter } from 'next/router'
-import  {TwitterIcon, GithubIcon, LinkedInIcon, SvgComponent, InstagramIcon, SunIcon, MoonIcon } from './Icons'
-import {motion} from 'framer-motion';
+import { TwitterIcon, GithubIcon, LinkedInIcon, SvgComponent, InstagramIcon, SunIcon, MoonIcon } from './Icons'
+import { motion } from 'framer-motion';
 import useThemeSwitcher from './hooks/useThemeSwitcher'
+import { useState } from 'react'
 
 const CustomLink = ({ href, title, className = '' }) => {
-  const router= useRouter();
-  
+  const router = useRouter();
+
   return (
     <Link href={href} className={`${className} relative group`}>
       {title}
 
       <span className={`h-[1px] inline-block w-0 bg-dark absolute left-0 -bottom-0.5  group-hover:w-full transition-[width] ease duration-300
-      ${router.asPath === href ?'w-full':'w-0'}
+      ${router.asPath === href ? 'w-full' : 'w-0'}
       dark:bg-light`} >
         &nbsp;
       </span>
@@ -26,37 +27,51 @@ const CustomLink = ({ href, title, className = '' }) => {
 const NavBar = () => {
 
   const [mode, setMode] = useThemeSwitcher();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleCheck = () => {
+    setIsOpen(!isOpen);
+  }
 
   return (
     <header className='flex justify-between items-center w-full px-32 py-8 font-medium
     dark:text-light'>
-      <nav>
-        <CustomLink href='/' title="Home" className=' mr-4' />
-        <CustomLink href='/about' title='About' className='mx-4' />
-        <CustomLink href='/projects' title='Projects' className='ml-4' />
 
-      </nav>
+      <button className=' flex-col justify-center items-center hidden lg:flex ' onClick={handleCheck}>
+        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out  h-0.5 w-6  ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`} > </span>
+        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}> </span>
+        <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6  ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}> </span>
+      </button>
 
-      <nav className='flex items-center justify-center flex-wrap'>
-        <motion.a href='https://x.com/SrijitKundu4?t=IuDVhPNge9woh9jh9Ey5nw&s=09' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mr-3'>
-          <TwitterIcon/> 
-        </motion.a>
-        <motion.a href='https://github.com/SrijitK10' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mx-3'>
-          <GithubIcon/>
-        </motion.a>
-        <motion.a href='https://www.linkedin.com/in/srijit-kundu' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mx-3'><LinkedInIcon/> </motion.a>
-        <motion.a href='https://instagram.com' target={'_blank'} whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 ml-3'><InstagramIcon/> </motion.a>
-        <button
-          onClick={() => setMode(mode==='light'?"dark":"light")}
-          className={`ml-3 flex items-center justify-center rounded-full p-1 
-          ${mode==="light"? "bg-dark text-light" :"bg-light text-dark"}`}>
+      <div className='w-full flex justify-between items-center lg:hidden '>
+        <nav>
+          <CustomLink href='/' title="Home" className=' mr-4' />
+          <CustomLink href='/about' title='About' className='mx-4' />
+          <CustomLink href='/projects' title='Projects' className='ml-4' />
+
+        </nav>
+
+        <nav className='flex items-center justify-center flex-wrap'>
+          <motion.a href='https://x.com/SrijitKundu4?t=IuDVhPNge9woh9jh9Ey5nw&s=09' target={'_blank'} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className='w-6 mr-3'>
+            <TwitterIcon />
+          </motion.a>
+          <motion.a href='https://github.com/SrijitK10' target={'_blank'} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className='w-6 mx-3'>
+            <GithubIcon />
+          </motion.a>
+          <motion.a href='https://www.linkedin.com/in/srijit-kundu' target={'_blank'} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className='w-6 mx-3'><LinkedInIcon /> </motion.a>
+          <motion.a href='https://instagram.com' target={'_blank'} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className='w-6 ml-3'><InstagramIcon /> </motion.a>
+          <button
+            onClick={() => setMode(mode === 'light' ? "dark" : "light")}
+            className={`ml-5 flex items-center justify-center rounded-full p-1 
+          ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}`}>
             {
-              mode==='dark'?
-              <SunIcon className={"fill-dark}"} />
-              : <MoonIcon className={"fill-dark"} />
+              mode === 'dark' ?
+                <SunIcon className={"fill-dark}"} />
+                : <MoonIcon className={"fill-dark"} />
             }
-        </button>
-      </nav>
+          </button>
+        </nav>
+      </div>
       <div className='absolute left-[50%] top-2 translate-x-0-50%]'>
         <Logo />
       </div>
