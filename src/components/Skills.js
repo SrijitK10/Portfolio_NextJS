@@ -69,7 +69,7 @@ const Skills = () => {
     <>
       <h2 className='font-bold text-8xl mt-64
        w-full text-center'>Skills</h2>
-      <div className='w-full grid grid-cols-2 sm:grid-cols-6 gap-4 text-center py-8 px-4 sm:px-12'>
+      <div className='w-full grid grid-cols-6 sm:grid-cols-6 gap-4 text-center py-8 px-4 sm:px-12'>
         <SkillCard src={c} alt='C' title='C' className='hover:scale-105 duration:400'/>
         <SkillCard src={cpp} alt='C++' title='C++' />
         <SkillCard src={java} alt='Java' title='Java' />

@@ -24,6 +24,31 @@ const CustomLink = ({ href, title, className = '' }) => {
 
   )
 }
+
+const CustomMobileLink = ({ href, title, className = '' ,toggle}) => {
+  const router = useRouter();
+
+  const handleCheck = () => {
+    toggle();
+    router.push(href);
+  }
+
+
+  return (
+    <button  href={href} className={`${className} relative group text-light dark:text-dark my-2`} onClick={handleCheck}>
+      {title}
+
+      <span className={`h-[1px] inline-block w-0 bg-dark absolute left-0 -bottom-0.5  group-hover:w-full transition-[width] ease duration-300
+       dark:bg-dark
+      ${router.asPath === href ? 'w-full' : 'w-0'}
+      bg-light`} >
+        &nbsp;
+      </span>
+    </button>
+
+  )
+}
+
 const NavBar = () => {
 
   const [mode, setMode] = useThemeSwitcher();
@@ -35,7 +60,7 @@ const NavBar = () => {
 
   return (
     <header className='flex justify-between items-center w-full px-32 py-8 font-medium
-    dark:text-light'>
+    dark:text-light relative'>
 
       <button className=' flex-col justify-center items-center hidden lg:flex ' onClick={handleCheck}>
         <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out  h-0.5 w-6  ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`} > </span>
@@ -72,6 +97,45 @@ const NavBar = () => {
           </button>
         </nav>
       </div>
+      {
+        isOpen ?
+
+        <motion.div 
+        initial={{scale:0,opacity:0,x:'-50%',y:'-50%' }} 
+        animate={{scale:1, opacity:1}}className='min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+      bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32'>
+      <nav className='flex items-center flex-col justify-center '>
+          <CustomMobileLink href='/' title="Home" className='' toggle={handleCheck} />
+          <CustomMobileLink href='/about' title='About' className='' toggle={handleCheck} />
+          <CustomMobileLink href='/projects' title='Projects' className=''  toggle={handleCheck}/>
+
+        </nav>
+
+        <nav className='flex items-center justify-center flex-wrap mt-2'>
+          <motion.a href='https://x.com/SrijitKundu4?t=IuDVhPNge9woh9jh9Ey5nw&s=09' target={'_blank'} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className='w-6 mr-3 sm:mx-1'>
+            <TwitterIcon />
+          </motion.a>
+          <motion.a href='https://github.com/SrijitK10' target={'_blank'} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className='w-6 mx-3 bg-light rounded-full dark:bg-dark sm:mx-1'>
+            <GithubIcon />
+          </motion.a>
+          <motion.a href='https://www.linkedin.com/in/srijit-kundu' target={'_blank'} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className='w-6 mx-3 sm:mx-1'><LinkedInIcon /> </motion.a>
+          <motion.a href='https://instagram.com' target={'_blank'} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className='w-6 ml-3 sm:mx-1'><InstagramIcon /> </motion.a>
+          <button
+            onClick={() => setMode(mode === 'light' ? "dark" : "light")}
+            className={`ml-5 flex items-center justify-center rounded-full p-1 
+          ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}`}>
+            {
+              mode === 'dark' ?
+                <SunIcon className={"fill-dark}"} />
+                : <MoonIcon className={"fill-dark"} />
+            }
+          </button>
+        </nav>
+
+      </motion.div>
+
+        : null
+      }
       <div className='absolute left-[50%] top-2 translate-x-0-50%]'>
         <Logo />
       </div>

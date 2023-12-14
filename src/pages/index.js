@@ -26,7 +26,7 @@ export default function Home() {
             <div className='w-3/4 flex flex-col item-center self-center '>
 
 
-              <AnimatedText text="Crafting Tomorrow's Intelligence Today." className='!text-6xl !text-left' />
+              <AnimatedText text="Crafting Tomorrow's Intelligence Today." className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl' />
               <p className='my-4 text-base font-medium '>
                 Transforming ideas into intelligent solutions. Explore my latest projects showcasing expertise in machine learning, Python, TensorFlow, and scikit-learn. From predictive analytics to deep learning, let's redefine what's possible in the world of intelligent systems
               </p>
