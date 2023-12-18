@@ -35,11 +35,11 @@ const SkillCard = ({ src, alt, title }) => {
   };
 
   const handleHoverStart = () => {
-    controls.start({ scale: 1.05 });
+    controls.start({ scale: 1.05,duration:0.5 });
   };
 
   const handleHoverEnd = () => {
-    controls.start({ scale: 1 });
+    controls.start({ scale: 1,duration:0.5 });
   };
 
   useEffect(() => {
@@ -68,8 +68,8 @@ const Skills = () => {
   return (
     <>
       <h2 className='font-bold text-8xl mt-64
-       w-full text-center'>Skills</h2>
-      <div className='w-full grid grid-cols-6 sm:grid-cols-6 gap-4 text-center py-8 px-4 sm:px-12'>
+       w-full text-center md:text-6xl md:mt-32'>Skills</h2>
+      <div className='w-full grid grid-cols-6 sm:grid-cols-2 gap-4 text-center py-8 px-4 sm:px-12 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4'>
         <SkillCard src={c} alt='C' title='C' className='hover:scale-105 duration:400'/>
         <SkillCard src={cpp} alt='C++' title='C++' />
         <SkillCard src={java} alt='Java' title='Java' />

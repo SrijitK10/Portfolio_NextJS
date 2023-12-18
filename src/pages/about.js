@@ -21,7 +21,7 @@ const about = () => {
                 <Layout className='pt-16'>
                     <AnimatedText text="Passion Fuels Purpose!" className='mb-12 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8 ' />
                     <div className='grid grid-cols-8 mt-10 gap-16 w-full sm:gap-8'>
-                        <div className='col-span-4 flex flex-col items-start justify-start xl:col-span-4 md:order-2'>
+                        <div className='col-span-4 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8'>
                             <h2 className='mb-4 text-1g font-bold uppercase text-dark/75 dark:text-light/75' >Biography</h2>
                             <p className='font-medium '>
                                 Hello, I'm Srijit Kundu, a machine learning engineer with a knack for crafting intelligent and impactful solutions. With 4 years of hands-on experience, I thrive on turning complex challenges into innovative outcomes.
