@@ -9,8 +9,9 @@ import chatter from '../../public/images/projects/Chatter.png';
 import lingo from '../../public/images/projects/lingo.png';
 import dl from '../../public/images/projects/dl.png';
 import srm from '../../public/images/projects/srmp.png';
-import portfolio from '../../public/images/projects/portfolio-cover-image.jpg';
+import portfolio from '../../public/images/projects/portfolio.png';
 import { motion } from 'framer-motion';
+import TransitionEffect from '@/components/TransitionEffect'
 
 const FramerImage = motion(Image);
 
@@ -82,6 +83,7 @@ const projects = () => {
                 </title>
                 <meta name="description" content="Srijit Kundu's Projects" />
             </Head>
+            <TransitionEffect/>
             <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light'>
                 <Layout className='pt-16'>
                     <AnimatedText text='Imagination Trumps Knowledge!'
@@ -89,7 +91,7 @@ const projects = () => {
 
                     <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
                         <div className='col-span-12'>
-                            <FeauturedProject type='Java Application' title='Chatter- Chat Application' summary='A portfolio website to showcase my work and skills' img={chatter} link='https://github.com/SrijitK10/Chat_Application_Java' github='https://github.com/SrijitK10/Chat_Application_Java'
+                            <FeauturedProject type='Java Application' title='Chatter- Chat Application' summary='A multi-user chat application developed using Java, Socket and Swing' img={chatter} link='https://github.com/SrijitK10/Chat_Application_Java' github='https://github.com/SrijitK10/Chat_Application_Java'
 
                             />
                         </div>
