@@ -34,7 +34,7 @@ export default function Home() {
                 Transforming ideas into intelligent solutions. Explore my latest projects showcasing expertise in machine learning, Python, TensorFlow, and scikit-learn. From predictive analytics to deep learning, let's redefine what's possible in the world of intelligent systems
               </p>
               <div className='flex items-center self-start mt-2 lg:self-center'>
-                <Link href="/dummy.pdf" target={"_blank"}
+                <Link href="./Srijit Resume.pdf" target={"_blank"}
                 className='flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg 
                 font-semibold hover:bg-light hover:text-dark 
                 border-2 border-solid border-transparent hover:border-dark
